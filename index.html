@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Algrowww — Senior Minecraft Java Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"/>
@@ -804,7 +807,7 @@ section{
   color:var(--text-dim);
   line-height:1.8;
 }
-.discord-btn{
+.discord-display{
   display:inline-flex;
   align-items:center;
   gap:10px;
@@ -814,17 +817,24 @@ section{
   padding:1rem 2.25rem;
   font-family:var(--font-mono);
   font-size:13px;
-  text-decoration:none;
-  transition:all 0.25s;
   font-weight:500;
   white-space:nowrap;
   box-shadow:0 4px 24px rgba(88,101,242,0.3);
   position:relative;
   z-index:1;
+  cursor:pointer;
+  transition:all 0.25s;
+  user-select:all;
 }
-.discord-btn:hover{
+.discord-display:hover{
   transform:translateY(-2px);
   box-shadow:0 8px 32px rgba(88,101,242,0.5);
+}
+.copy-hint{
+  font-size:10px;
+  opacity:0.6;
+  margin-left:4px;
+  font-weight:400;
 }
 
 .contact-checklist{
@@ -919,6 +929,20 @@ footer .grad{
 <base target="_blank">
 </head>
 <body>
+<script>
+// Force all internal links to stay on same page - prevent any new tab behavior
+document.addEventListener('click', function(e){
+  const a = e.target.closest('a');
+  if(a && a.getAttribute('href') && a.getAttribute('href').startsWith('#')){
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target){
+      target.scrollIntoView({behavior:'smooth'});
+    }
+    history.pushState(null, null, a.getAttribute('href'));
+  }
+});
+</script>
 
 <div id="glow"></div>
 <div id="bg-mesh"></div>
@@ -1185,13 +1209,13 @@ footer .grad{
           <div class="proj-name">Skyllia — Extended Fork</div>
           <span class="proj-badge b-fork">Fork</span>
         </div>
-        <p class="proj-desc">High-performance fork of <a href="https://github.com/Euphillya/Skyllia" target="_blank" style="color:var(--emerald);text-decoration:none">Euphillya/Skyllia</a> skyblock plugin. Added async FAWE island generation, custom biome injection, expanded PlaceholderAPI variables, and async island deletion optimized for Folia multi-threaded servers.</p>
+        <p class="proj-desc">High-performance fork of <span style="color:var(--emerald);text-decoration:none;cursor:default">Euphillya/Skyllia</span> skyblock plugin. Added async FAWE island generation, custom biome injection, expanded PlaceholderAPI variables, and async island deletion optimized for Folia multi-threaded servers.</p>
         <p class="proj-impact">70% faster island generation under concurrent load — reduced average creation time from 8s to 2.4s</p>
         <div class="proj-tags">
           <span class="proj-tag">Folia</span><span class="proj-tag">FAWE</span>
           <span class="proj-tag">Async Gen</span><span class="proj-tag">Custom Biomes</span>
         </div>
-        <a class="proj-link" href="https://github.com/Euphillya/Skyllia" target="_blank">↗ View Original</a>
+        <span class="proj-link">↗ View Original</a>
       </div>
 
       <div class="proj-card reveal">
@@ -1212,13 +1236,13 @@ footer .grad{
           <div class="proj-name">IridiumSkyblock — FAWE Fork</div>
           <span class="proj-badge b-fork">Fork</span>
         </div>
-        <p class="proj-desc">Performance-optimized fork of <a href="https://hangar.papermc.io/IridiumDevelopment/IridiumSkyblock" target="_blank" style="color:var(--emerald);text-decoration:none">IridiumSkyblock</a> replacing default WorldEdit with FAWE async pipelines. Implemented custom PDC tagging layer for island item identification and ownership tracking.</p>
+        <p class="proj-desc">Performance-optimized fork of <span style="color:var(--emerald);text-decoration:none;cursor:default">IridiumSkyblock</span> replacing default WorldEdit with FAWE async pipelines. Implemented custom PDC tagging layer for island item identification and ownership tracking.</p>
         <p class="proj-impact">60-80% faster island operations under concurrent load — handles 50+ simultaneous island creations</p>
         <div class="proj-tags">
           <span class="proj-tag">FAWE Async</span><span class="proj-tag">PaperMC</span>
           <span class="proj-tag">PDC</span><span class="proj-tag">Optimization</span>
         </div>
-        <a class="proj-link" href="https://hangar.papermc.io/IridiumDevelopment/IridiumSkyblock" target="_blank">↗ View Original</a>
+        <span class="proj-link">↗ View Original</a>
       </div>
 
       <div class="proj-card reveal">
@@ -1252,12 +1276,12 @@ footer .grad{
           <div class="proj-name">PaperMC Plugin Template</div>
           <span class="proj-badge b-con">Open Source</span>
         </div>
-        <p class="proj-desc">Contributed multi-plugin bootstrapper extensions to <a href="https://github.com/thehale/papermc-plugin-template" target="_blank" style="color:var(--emerald);text-decoration:none">thehale/papermc-plugin-template</a> — cross-plugin DI helpers, Gradle shadow jar config for FAWE projects, and shared service locator examples for network architectures.</p>
+        <p class="proj-desc">Contributed multi-plugin bootstrapper extensions to <span style="color:var(--emerald);text-decoration:none;cursor:default">thehale/papermc-plugin-template</span> — cross-plugin DI helpers, Gradle shadow jar config for FAWE projects, and shared service locator examples for network architectures.</p>
         <div class="proj-tags">
           <span class="proj-tag">Gradle</span><span class="proj-tag">DI Patterns</span>
           <span class="proj-tag">Multi-Plugin</span><span class="proj-tag">Open Source</span>
         </div>
-        <a class="proj-link" href="https://github.com/thehale/papermc-plugin-template" target="_blank">↗ View Repository</a>
+        <span class="proj-link">↗ View Repository</span>
       </div>
 
     </div>
@@ -1384,10 +1408,11 @@ footer .grad{
           <strong style="color:var(--text)">Contracts:</strong> Hourly · Fixed-price · Monthly retainer
         </p>
       </div>
-      <a href="https://discord.com/users/mrtrollfaceguy" class="discord-btn" target="_blank">
+      <div class="discord-display" onclick="copyDiscord()">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-        Message on Discord
-      </a>
+        <span style="font-weight:600">mrtrollfaceguy</span>
+        <span class="copy-hint">click to copy</span>
+      </div>
     </div>
 
     <div class="contact-checklist reveal">
@@ -1484,6 +1509,15 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
   });
 });
+
+function copyDiscord(){
+  navigator.clipboard.writeText('mrtrollfaceguy').then(() => {
+    const el = document.querySelector('.discord-display');
+    const original = el.innerHTML;
+    el.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><span style="font-weight:600">mrtrollfaceguy</span><span class="copy-hint">copied!</span>';
+    setTimeout(() => { el.innerHTML = original; }, 1500);
+  });
+}
 </script>
 </body>
 </html>
