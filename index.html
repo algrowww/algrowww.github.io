@@ -8,7 +8,7 @@
 <style>
 :root{
   --obsidian:#06060a;
-  --obsidian-light:#0c0c14; 
+  --obsidian-light:#0c0c14;
   --obsidian-card:#10101a;
   --diamond:#00d4ff;
   --diamond-dim:#00a8cc;
@@ -89,10 +89,13 @@ nav{
   font-size:22px;
   font-weight:700;
   color:#fff;
-  text-decoration:none;
-  display:flex;
+  display:inline-flex;
   align-items:center;
   gap:8px;
+}
+.logo-text{
+  display:inline;
+  white-space:nowrap;
 }
 .nav-logo::before{
   content:'';
@@ -913,6 +916,7 @@ footer .grad{
   .nav-links{display:none}
 }
 </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -922,7 +926,7 @@ footer .grad{
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="#">Algrow<span>ww</span></a>
+    <div class="nav-logo"><span class="logo-text">Algrow<span class="grad">ww</span></span></div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#why">Why Me</a></li>
@@ -938,14 +942,14 @@ footer .grad{
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-badge">Available for Hire — Immediate Start</div>
+    <div class="hero-badge">#1 Pakistan Minecraft Java Developer — Available for Hire</div>
     <h1 class="hero-name">Senior Minecraft<br><span class="grad">Java Developer</span></h1>
     <p class="hero-role">Game Server Architect · Plugin Engineer · Network Infrastructure</p>
     <p class="hero-desc">
       I build production-grade Paper/Spigot plugins and distributed backend systems that handle <strong>100,000+ concurrent players</strong>. From real-time matchmaking engines to async world manipulation and crash-safe economy backends — I ship code that survives Friday night traffic spikes.
     </p>
     <p class="hero-highlight">
-      5+ years production experience · 50+ plugins shipped · 15+ maintained forks · Zero-downtime deployment specialist · Paper 1.8–1.21+ expert
+      5+ years production · 50+ plugins shipped · 15+ maintained forks · Open-source contributor · Zero-downtime specialist · Paper 1.8–1.21+
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-primary">View Portfolio →</a>
@@ -970,7 +974,9 @@ footer .grad{
     <div class="about-grid">
       <div class="reveal">
         <h2 class="sec-title">Backend Specialist &<br><span class="grad">Infrastructure Architect</span></h2>
-        <p class="about-p">I'm <strong>Algrowww</strong>, a senior Java developer who specializes in Minecraft server infrastructure that handles real production load — not proof-of-concepts. I live in the Paper/Spigot ecosystem and know the Bukkit API down to the packet level.</p>
+        <p class="about-p">I'm <strong>Algrowww</strong>, a senior Java developer based in <strong>Pakistan</strong> who specializes in Minecraft server infrastructure that handles real production load — not proof-of-concepts. I live in the Paper/Spigot ecosystem and know the Bukkit API down to the packet level.</p>
+
+        <p class="about-p">I've contributed to numerous open-source plugins and maintained high-performance forks used by networks worldwide. From upstream bug fixes to custom API extensions, my contributions help power servers serving hundreds of thousands of players.</p>
 
         <p class="about-p">Over five years, I've designed and shipped <em>50+ production plugins</em> for networks serving hundreds of thousands of players. My expertise spans high-throughput concurrent systems, async world manipulation with FAWE, custom entity AI frameworks, competitive ranking engines, and player-driven economy backends with transaction-safe persistence.</p>
 
